@@ -1,8 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Fallback fonts, line heights and font weight*/
+
+  color-scheme: light dark;
+  --background: hsl(237, 86%, 2%);
+  --foreground: var(--color-white);
+
+  --color-link: var(--color-white);
+  --color-link-hover: var(--color-primary-light);
+  --color-link-visited: var(--color-primary-light);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @theme inline {
@@ -10,17 +22,103 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-primary: hsl(237, 86%, 64%);
+  --color-primary-100: hsl(237, 100%, 95%);
+  --color-primary-300: hsl(237, 85%, 75%);
+  --color-primary-700: hsl(237, 70%, 50%);
+  --color-primary-900: hsl(237, 70%, 30%);
+
+  --color-accent: hsl(16, 100%, 65%);
+  --color-accent-green: hsl(145, 63%, 49%);
+  --color-accent-yellow: hsl(48, 96%, 53%);
+  --color-accent-pink: hsl(338, 84%, 61%);
+
+  --color-dark: hsl(0, 0%, 5%);
+  --color-dark-gray: hsl(0, 0%, 15%);
+  --color-gray: hsl(0, 0%, 30%);
+
+  --color-light: hsl(0, 0%, 95%);
+  --color-light-gray: hsl(0, 0%, 85%);
+  --color-muted-gray: hsl(0, 0%, 70%);
+
+  --animate-slow-spin: spin 4s linear infinite;
+
+  --animate-infinite-horizontal-movement: infinite-horizontal-movement 20s
+    linear infinite;
+  --animate-infinite-horizontal-movement-reverse: infinite-horizontal-movement-reverse
+    20s linear infinite;
+  --animate-shine: shine 2s linear infinite;
+}
+
+@keyframes infinite-horizontal-movement {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes infinite-horizontal-movement-reverse {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(200%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html.light {
+  --background: hsl(237, 86%, 95%);
+  --foreground: var(--color-dark);
+
+  --color-link: var(--color-dark);
+  --color-link-hover: var(--color-primary-light);
+  --color-link-visited: var(--color-primary-light);
+}
+
+a:not(.logo, .no-link-style) {
+  font-weight: 500;
+  color: var(--color-link);
+  text-decoration: inherit;
+  transition:
+    color 0.25s,
+    background-color 0.25s;
+}
+a:not(.logo, .no-link-style):hover {
+  color: var(--color-link-hover);
+  opacity: 0.8;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--color-background);
+    --foreground: var(--color-white);
   }
 }
 
 body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition:
+    color 0.25s,
+    background-color 0.25s;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
