@@ -22,12 +22,12 @@ export default function Skills() {
           What I offer
         </h1>
         {/* Text-gradient */}
-        <h4 className="text-primary mx-auto font-bold sm:w-1/2">
+        <span className="from-primary to-primary-300 mx-auto inline-block bg-gradient-to-r from-25% to-70% bg-clip-text font-bold text-transparent sm:w-1/2">
           I provide full-stack solutions — from intuitive interfaces to robust
           backends and mobile apps. Whether you’re an employer looking for a
           reliable developer or a client needing a digital solution, here’s how
           I can help:
-        </h4>
+        </span>
       </div>
 
       <section className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-2 xl:grid-cols-3">
@@ -36,13 +36,13 @@ export default function Skills() {
             icon: <FaCode />,
             title: "Frontend Development",
             description:
-              "I build responsive, accessible, and modern interfaces using HTML, CSS, JavaScript, and React. I also collaborate with designers to translate mockups into functional, high-quality code.",
+              "I build responsive, accessible, and modern interfaces using HTML, CSS, JavaScript, and React, and collaborate with designers to translate mockups into functional, high-quality code.",
           },
           {
             icon: <FaServer />,
             title: "Backend Development",
             description:
-              "I Develop server-side applications with Node.js and Express.js and also create and integrate RESTful APIs to support scalable systems.",
+              "I develop server-side applications with Node.js and Express.js, and create and integrate RESTful APIs to support scalable systems.",
           },
           {
             icon: <FaLayerGroup />,
