@@ -11,7 +11,7 @@ export default function Hero() {
       {/* Navigate to featured work button */}
       {/* Add revealing arrow animation */}
       <button
-        onClick={() => router.push("/projects")}
+        onClick={() => router.push("/works")}
         className="bg-primary/50 border-primary #animate-pulse before:animate-shine dark:before:via-primary text-primary-dark/60 dark:text-primary relative mx-auto flex cursor-pointer items-center overflow-hidden rounded-full border px-4 py-0.75 font-medium before:absolute before:h-full before:w-full before:-skew-x-20 before:rounded-full before:bg-gradient-to-r before:from-transparent before:from-20% before:via-white/30 before:via-50% before:to-transparent before:to-80% dark:before:from-transparent dark:before:to-transparent"
       >
         <p>View my works</p>

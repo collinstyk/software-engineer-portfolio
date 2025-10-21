@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
-:root {
-  /* Fallback fonts, line heights and font weight*/
+@custom-variant dark (&:where(.dark, .dark *));
 
+:root {
   color-scheme: light dark;
   --background: hsl(237, 86%, 2%);
-  --foreground: var(--color-white);
-
+  --foreground: hsl(0, 0, 100%);
+  --color-background: hsl(237, 86%, 2%);
+  --color-foreground: hsl(0, 0, 100%);
   --color-link: var(--color-white);
   --color-link-hover: var(--color-primary-light);
   --color-link-visited: var(--color-primary-light);
@@ -18,8 +19,8 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: hsl(237, 86%, 2%);
+  --color-foreground: hsl(0, 0, 100%);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
@@ -51,6 +52,28 @@
   --animate-shine: shine 2s linear infinite;
 }
 
+html.light {
+  --background: hsl(237, 86%, 95%);
+  --foreground: hsl(0, 0%, 5%);
+  --color-background: hsl(237, 86%, 95%);
+  --color-foreground: hsl(0, 0%, 5%);
+  --color-link: var(--color-dark);
+  --color-link-hover: var(--color-primary-light);
+  --color-link-visited: var(--color-primary-light);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  transition:
+    color 0.25s,
+    background-color 0.25s;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
 @keyframes infinite-horizontal-movement {
   from {
     transform: translateX(0%);
@@ -80,17 +103,6 @@
   }
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-html.light {
-  --background: hsl(237, 86%, 95%);
-  --foreground: var(--color-dark);
-
-  --color-link: var(--color-dark);
-  --color-link-hover: var(--color-primary-light);
-  --color-link-visited: var(--color-primary-light);
-}
-
 a:not(.logo, .no-link-style) {
   font-weight: 500;
   color: var(--color-link);
@@ -109,16 +121,4 @@ a:not(.logo, .no-link-style):hover {
     --background: var(--color-background);
     --foreground: var(--color-white);
   }
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background: var(--background);
-  color: var(--foreground);
-  transition:
-    color 0.25s,
-    background-color 0.25s;
-  /* font-family: Arial, Helvetica, sans-serif; */
 }

@@ -12,7 +12,6 @@ import { luckiest_guy } from "@/app/ui/fonts";
 gsap.registerPlugin(useGSAP);
 
 function Logo() {
-  // Remove the container and style the angle bracketts
   return (
     <div className="p-0.25 text-4xl">
       <div className="flex items-center">
@@ -48,7 +47,6 @@ function Pages() {
   );
 }
 
-// Add background to the icon
 function DarkModeToggle() {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.theme === "dark" ? true : false,
