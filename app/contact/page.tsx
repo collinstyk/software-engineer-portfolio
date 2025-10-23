@@ -10,7 +10,7 @@ import { GoArrowRight } from "react-icons/go";
 export default function Contact() {
   return (
     <main className="mx-6 my-4 px-6 lg:px-4">
-      <section className="flex flex-col space-y-8 p-10 md:flex-row md:justify-between">
+      <section className="flex flex-col space-y-8 sm:p-10 md:flex-row md:justify-between">
         <div>
           <h1
             className={cn(

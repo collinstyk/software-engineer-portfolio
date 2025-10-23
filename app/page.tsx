@@ -11,7 +11,8 @@ import Hero from "./ui/home/Hero";
 // fonts
 import { geist, geistMono, preahvihear } from "@/app/ui/fonts";
 import { Geist_Mono } from "next/font/google";
-import TechStacks from "./ui/home/TechStack";
+import TechStacks from "@/app/ui/home/TechStack";
+import Testimonials from "@/app/ui/home/Testimonials";
 
 gsap.registerPlugin(useGSAP);
 
@@ -27,9 +28,7 @@ export default function Home() {
       {/* Random Dev Motivation */}
 
       {/* Testimonials */}
-      <section className="mt-12 w-full">
-        <h1 className="mx-auto w-fit text-5xl font-bold">Testimonials</h1>
-      </section>
+      <Testimonials />
     </div>
   );
 }

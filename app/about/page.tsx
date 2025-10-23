@@ -1,20 +1,66 @@
 import Image from "next/image";
+import Link from "next/link";
+import { cloneElement } from "react";
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoMdMail } from "react-icons/io";
+import { geistMono } from "../ui/fonts";
 
 export default function About() {
   return (
     <div className="mt-4">
       <main className="relative mx-auto my-20 flex w-2/3 justify-center gap-10">
-        <div className="sticky">
+        <div className="sticky space-y-6">
+          {/* Profile Image */}
           <div className="w-fit rounded-full border-2 border-neutral-500 dark:border-neutral-700">
             <Image
               src={"/collins-1.jpg"}
               alt="Chidozie Collins Achusiogu"
-              height={158}
-              width={158}
+              height={200}
+              width={200}
               className="rounded-full"
             />
           </div>
           {/* socials, gmail, phone number and other links */}
+          <div className="space-y-4">
+            <ul className="flex items-center justify-between">
+              {[
+                { link: "https://x.com/dozie_jr", icon: <FaXTwitter /> },
+                { link: "https://github.com/collinstyk", icon: <FaGithub /> },
+                {
+                  link: "https://www.linkedin.com/in/dozie-jr-achusiogu-917140226?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                  icon: <FaLinkedin />,
+                },
+                {
+                  link: "https://www.instagram.com/collins_tyk",
+                  icon: <FaInstagram />,
+                },
+                { link: "https://wa.me/+2349078312075", icon: <FaWhatsapp /> },
+              ].map((item) => {
+                const { link, icon } = item;
+                return (
+                  <li>
+                    <Link href={link} target="_blank">
+                      {cloneElement(icon, { size: 24 })}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <hr className="border-neutral-500" />
+            <Link
+              href={"mailto:collinstyk803@gmail.com"}
+              className="flex space-x-4"
+            >
+              <IoMdMail size={24} />{" "}
+              <span className={geistMono.className}>
+                collinstyk803@gmail.com
+              </span>
+            </Link>
+          </div>
+
+          {/* Work Experience */}
         </div>
         <article className="flex-1 space-y-5">
           <h1 className="text-6xl font-bold">Collins Achusiogu.</h1>

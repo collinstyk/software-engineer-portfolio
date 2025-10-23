@@ -22,9 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.className} antialiased`}>
+      <body className={`${geistSans.className} relative antialiased`}>
         <Header />
-        <main className="mx-auto max-w-7xl sm:pt-[66px]">{children}</main>
+        <main className="mx-auto max-w-7xl pb-40 sm:pt-[66px]">{children}</main>
         <Footer />
       </body>
     </html>
