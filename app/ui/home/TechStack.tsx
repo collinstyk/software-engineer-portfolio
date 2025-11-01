@@ -1,7 +1,6 @@
 "use client";
 
-import { cloneElement, ReactElement, ReactNode, useRef } from "react";
-import { IconType } from "react-icons";
+import { cloneElement, ReactElement, useRef } from "react";
 
 import {
   FaCss3,

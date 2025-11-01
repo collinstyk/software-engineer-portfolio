@@ -7,6 +7,20 @@ import { cloneElement } from "react";
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
+const socials = [
+  { link: "https://x.com/dozie_jr", icon: <FaXTwitter /> },
+  { link: "https://github.com/collinstyk", icon: <FaGithub /> },
+  {
+    link: "https://www.linkedin.com/in/dozie-jr-achusiogu-917140226?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    icon: <FaLinkedin />,
+  },
+  {
+    link: "https://www.instagram.com/collins_tyk",
+    icon: <FaInstagram />,
+  },
+  { link: "https://wa.me/+2349078312075", icon: <FaWhatsapp /> },
+];
+
 function Footer() {
   const now = new Date();
   const year = now.toDateString().split(" ")[3];
@@ -24,23 +38,11 @@ function Footer() {
         {/* Social Media icons with links */}
         <div>
           <ul className="flex items-center justify-between gap-4">
-            {[
-              { link: "https://x.com/dozie_jr", icon: <FaXTwitter /> },
-              { link: "https://github.com/collinstyk", icon: <FaGithub /> },
-              {
-                link: "https://www.linkedin.com/in/dozie-jr-achusiogu-917140226?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                icon: <FaLinkedin />,
-              },
-              {
-                link: "https://www.instagram.com/collins_tyk",
-                icon: <FaInstagram />,
-              },
-              { link: "https://wa.me/+2349078312075", icon: <FaWhatsapp /> },
-            ].map((item) => {
+            {socials.map((item) => {
               const { link, icon } = item;
               return (
-                <li>
-                  <Link key={link} href={link} target="_blank">
+                <li key={link}>
+                  <Link href={link} target="_blank">
                     {cloneElement(icon, { size: 16 })}
                   </Link>
                 </li>
