@@ -34,10 +34,13 @@ const Testimonials = () => {
             name: "Amaka Okafor",
             description: "Founder, Standard Barrels Ltd",
           },
-        ].map((testimonial) => {
+        ].map((testimonial, index) => {
           const { body, image, name, description } = testimonial;
           return (
-            <article className="w-68 rounded-lg bg-neutral-50 px-4 pb-4 shadow-xl dark:bg-neutral-800">
+            <article
+              key={index.toString()}
+              className="w-68 rounded-lg bg-neutral-50 px-4 pb-4 shadow-xl dark:bg-neutral-800"
+            >
               <div className="relative bottom-8 mx-auto w-fit rounded-full bg-[#e7e8fd] p-2 dark:bg-[#010109]">
                 <Image
                   src={image}

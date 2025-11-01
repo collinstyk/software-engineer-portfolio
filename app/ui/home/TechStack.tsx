@@ -1,6 +1,7 @@
 "use client";
 
-import { cloneElement, ReactElement, useRef } from "react";
+import { cloneElement, ReactElement, ReactNode, useRef } from "react";
+import { IconType } from "react-icons";
 
 import {
   FaCss3,
@@ -28,7 +29,7 @@ const TechStackCard = ({
   cardRef,
 }: {
   name: string;
-  icon: ReactElement<any>;
+  icon: ReactElement<ExtendedIconType>;
   className?: string;
   cardRef?: React.Ref<HTMLDivElement>;
 }) => {
