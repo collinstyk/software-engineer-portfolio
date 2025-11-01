@@ -51,7 +51,7 @@ export default function About() {
               {socials.map((item) => {
                 const { link, icon } = item;
                 return (
-                  <li>
+                  <li key={link}>
                     <Link href={link} target="_blank">
                       {cloneElement(icon, { size: 24 })}
                     </Link>

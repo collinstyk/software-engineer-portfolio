@@ -1,4 +1,7 @@
-import { CiLocationOn, CiMail } from "react-icons/ci";
+import {
+  // CiLocationOn,
+  CiMail,
+} from "react-icons/ci";
 import { cn } from "../lib/utils";
 import { geistMono } from "../ui/fonts";
 import Link from "next/link";
