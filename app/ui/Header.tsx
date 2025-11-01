@@ -71,34 +71,26 @@ function DarkModeToggle() {
   );
   const handleToggle = () => setIsDarkMode((prev) => !prev);
 
-  const toggleRef = useRef(null);
-
   useEffect(() => {
     const html = document.documentElement;
-    // console.log(window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-    if (isDarkMode) {
-      localStorage.setItem("theme", "dark");
-      html?.classList.add("dark");
-      html?.classList.remove("light");
-    } else {
-      localStorage.setItem("theme", "light");
-      html?.classList.remove("dark");
-      html?.classList.add("light");
-    }
+    if (window)
+      if (isDarkMode) {
+        localStorage.setItem("theme", "dark");
+        html?.classList.add("dark");
+        html?.classList.remove("light");
+      } else {
+        localStorage.setItem("theme", "light");
+        html?.classList.remove("dark");
+        html?.classList.add("light");
+      }
   }, [isDarkMode]);
-
-  // useGSAP(() => {
-  //   gsap.to(toggleRef.current, { x: isDarkMode ? 24 : "0%", duration: 0.25 });
-  //   gsap.to(".icon", { x: isDarkMode ? -24 : 0, duration: 0.25 });
-  // }, [isDarkMode]);
 
   return (
     <button
       onClick={handleToggle}
       className="flex cursor-pointer gap-2 rounded-full bg-neutral-200 px-1.5 py-1 dark:bg-neutral-700"
     >
-      {/* <span className="h-4 w-4 rounded-full" ref={toggleRef} /> */}
       <span className="icon #-z-10">
         <IoMoon className="moon hidden dark:block" />
         <IoSunnyOutline className="sun dark:hidden" />
@@ -109,7 +101,7 @@ function DarkModeToggle() {
 
 export default function Header() {
   return (
-    <div className="header fixed right-0 bottom-0 left-0 z-10 h-fit px-8 py-4 backdrop-blur-sm lg:top-0">
+    <div className="header fixed right-0 bottom-0 left-0 z-10 h-fit px-8 py-2 backdrop-blur-sm md:top-0">
       <header className="mx-auto max-w-7xl">
         <nav className="flex w-full flex-wrap items-center justify-between gap-2">
           {/* logo */}

@@ -1,5 +1,4 @@
-// prettier-ignore
-'use client'
+"use client";
 
 // libraries
 import gsap from "gsap";
@@ -7,12 +6,12 @@ import { useGSAP } from "@gsap/react";
 
 // ui
 import Hero from "./ui/home/Hero";
+import TechStacks from "@/app/ui/home/TechStack";
+import Testimonials from "@/app/ui/home/Testimonials";
 
 // fonts
 import { geist, geistMono, preahvihear } from "@/app/ui/fonts";
 import { Geist_Mono } from "next/font/google";
-import TechStacks from "@/app/ui/home/TechStack";
-import Testimonials from "@/app/ui/home/Testimonials";
 
 gsap.registerPlugin(useGSAP);
 

@@ -6,11 +6,25 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { geistMono } from "../ui/fonts";
 
+const socials = [
+  { link: "https://x.com/dozie_jr", icon: <FaXTwitter /> },
+  { link: "https://github.com/collinstyk", icon: <FaGithub /> },
+  {
+    link: "https://www.linkedin.com/in/dozie-jr-achusiogu-917140226?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    icon: <FaLinkedin />,
+  },
+  {
+    link: "https://www.instagram.com/collins_tyk",
+    icon: <FaInstagram />,
+  },
+  { link: "https://wa.me/+2349078312075", icon: <FaWhatsapp /> },
+];
+
 export default function About() {
   return (
     <div className="mt-4">
-      <main className="relative mx-auto my-20 flex w-2/3 justify-center gap-10">
-        <div className="sticky space-y-6">
+      <main className="relative mx-auto my-6 flex w-2/3 flex-col justify-center gap-10 md:flex-row">
+        <div className="sticky flex w-fit flex-col items-center space-y-6 max-md:mx-auto md:block">
           {/* Profile Image */}
           <div className="w-fit rounded-full border-2 border-neutral-500 dark:border-neutral-700">
             <Image
@@ -21,22 +35,20 @@ export default function About() {
               className="rounded-full"
             />
           </div>
+
+          {/* Work Experience */}
+        </div>
+        <article className="flex-1 space-y-5">
+          <h1 className="text-5xl font-semibold max-md:text-center md:text-6xl md:font-bold">
+            Collins Achusiogu.
+          </h1>
+          <h3 className="text-4xl font-extralight max-md:text-center">
+            Fullstack Web Developer.
+          </h3>
           {/* socials, gmail, phone number and other links */}
-          <div className="space-y-4">
-            <ul className="flex items-center justify-between">
-              {[
-                { link: "https://x.com/dozie_jr", icon: <FaXTwitter /> },
-                { link: "https://github.com/collinstyk", icon: <FaGithub /> },
-                {
-                  link: "https://www.linkedin.com/in/dozie-jr-achusiogu-917140226?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-                  icon: <FaLinkedin />,
-                },
-                {
-                  link: "https://www.instagram.com/collins_tyk",
-                  icon: <FaInstagram />,
-                },
-                { link: "https://wa.me/+2349078312075", icon: <FaWhatsapp /> },
-              ].map((item) => {
+          <div className="w-fit space-y-4 max-md:mx-auto">
+            <ul className="flex items-center gap-4 max-md:justify-center md:justify-between">
+              {socials.map((item) => {
                 const { link, icon } = item;
                 return (
                   <li>
@@ -60,11 +72,6 @@ export default function About() {
             </Link>
           </div>
 
-          {/* Work Experience */}
-        </div>
-        <article className="flex-1 space-y-5">
-          <h1 className="text-6xl font-bold">Collins Achusiogu.</h1>
-          <h3 className="text-4xl font-extralight">Fullstack Web Developer.</h3>
           <p className="text-lg">
             I’m a passionate Full-Stack Developer with a growing focus on
             building clean, functional, and user-friendly applications. I love

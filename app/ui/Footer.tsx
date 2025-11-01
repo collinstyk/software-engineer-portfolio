@@ -40,7 +40,7 @@ function Footer() {
               const { link, icon } = item;
               return (
                 <li>
-                  <Link href={link} target="_blank">
+                  <Link key={link} href={link} target="_blank">
                     {cloneElement(icon, { size: 16 })}
                   </Link>
                 </li>
