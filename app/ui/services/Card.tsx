@@ -2,7 +2,7 @@ import { cloneElement, ReactElement } from "react";
 
 type CardProps = {
   index: number;
-  icon: ReactElement<any>;
+  icon: ReactElement<ExtendedIconType>;
   iconClass?: string;
   size?: number;
   title: string;
@@ -12,7 +12,7 @@ type CardProps = {
 };
 
 export default function Card({
-  index,
+  // index,
   icon,
   iconClass,
   size = 24,
